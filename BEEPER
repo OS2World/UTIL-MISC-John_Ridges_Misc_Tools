@@ -1,0 +1,5 @@
+beeper.obj : beeper.c
+    cl -c -G2rs -AS -W3 -Ox beeper.c
+
+beeper.exe : beeper.obj beeper.def
+    link beeper, /align:16, NUL, os2, beeper

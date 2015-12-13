@@ -1,0 +1,6 @@
+indent.obj : indent.c
+    cl -c -G2c -AS -W3 -Ox indent.c
+
+indent.exe : indent.obj indent.def
+    link indent, /align:16, NUL, os2, indent
+

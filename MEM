@@ -1,0 +1,8 @@
+meminit.obj: meminit.c
+    cl -c -W3 -AS -G2ws -Ox -Zpe -Gc meminit.c
+
+mem.obj: mem.c
+    cl -c -W3 -AS -G2ws -Ox -Zpe -Gc mem.c
+
+mem.exe: mem.obj meminit.obj mem.def
+    link /align:16 mem+meminit,mem,nul,os2,mem

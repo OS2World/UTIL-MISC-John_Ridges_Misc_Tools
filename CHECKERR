@@ -1,0 +1,6 @@
+checkerr.obj : checkerr.c
+    cl -c -G2c -AC -W3 -Ox checkerr.c
+
+checkerr.exe : checkerr.obj checkerr.def
+    link checkerr, /align:16, NUL, os2, checkerr
+    bind checkerr c:\pmsdk\lib\os2\api.lib c:\pmsdk\lib\os2\doscalls.lib

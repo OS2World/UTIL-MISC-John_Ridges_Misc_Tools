@@ -1,0 +1,6 @@
+rendir.obj : rendir.c
+    cl -c -G2rs -AS -W3 -Ox rendir.c
+
+rendir.exe : rendir.obj rendir.def
+    link rendir, /align:16, NUL, os2, rendir
+    bind rendir c:\os2\doscalls.lib c:\os2dev\lib\api.lib
